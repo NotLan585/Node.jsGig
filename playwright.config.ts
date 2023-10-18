@@ -23,21 +23,6 @@ export default defineConfig({
   // workers: process.env.CI ? 1 : undefined,
   // /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    [
-      "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
-      {
-        slackWebHookUrl: "https://hooks.slack.com/services/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",
-        sendResults: "off", // "always" , "on-failure", "off",
-        meta: [
-          {
-            key: 'Suite', 
-            value: 'Nightly RMS Regression',
-          },
-          {
-              key: 'HTML Results',
-              value: '<https://your-build-artifacts.my.company.dev/pw/23887/playwright-report/index.html|📊>',
-          },
-      ],
         disableUnfurl: true,
         showInThread: true,
       },
@@ -46,7 +31,6 @@ export default defineConfig({
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    storageState: 'storage-state.json',
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
